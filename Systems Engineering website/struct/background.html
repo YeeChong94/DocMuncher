@@ -12,7 +12,7 @@
 				</p>
 			</a>
 			<div class="gitHub">
-				<a href="https://github.com/ralucavacaru/clifford1"> <img src="../img/gitHub.png" alt="GitHub"> </a>
+				<a href="https://github.com/YeeChong94/DocMuncher"> <img src="../img/gitHub.png" alt="GitHub"> </a>
 			</div>
 		</div>
 
@@ -28,32 +28,32 @@
 						Project Background
 					</li>
 				</a>
-				<a href="research.html">
+				<a href="requirements.html">
 					<li class="button">
-						Research
+						Requirements
 					</li>
 				</a>
 				<a href="development.html">
 					<li class="button">
-						Development
+						Research and Development
 					</li>
 				</a>
-				<a href="features.html">
+				<a href="testing.html">
 					<li class="button">
-						Features
+						Testing
 					</li>
 				</a>
 				<li class="button">
 					<a href="#">Team Record</a>
 					<ul>
-						<a href="minutes.html">
-							<li class="dropDownButton">
-								Meeting Minutes
-							</li>
-						</a>
 						<a href="biweekly.html">
 							<li class="dropDownButton">
 								Bi-Weekly Reports
+							</li>
+						</a>
+						<a href="video.html">
+							<li class="dropDownButton">
+								Video
 							</li>
 						</a>
 					</ul>
@@ -66,10 +66,21 @@
 			</ul>
 		</nav>
 
+		<nav class="logos">
+			<a href="http://www.microsoft.com">
+				<img src="../img/microsoft.png">
+			</a>
+			<a href="http://www.cliffordchance.com/">
+				<img src="../img/cliffordchance.png">
+			</a>
+		</nav>
+
 		<div class="content">
-			<p class="contentText">
-				This will be a more detailed description of the project with diagrams, MoSCoW etc.
+			<h1>Project Background </h1>
+			<p class="contentTextWithImage">
+				In a Merger and Acquisition (M&#38;A), lawyers have to go through a lot of legal documents to ensure that the deal does not bring harm to the company in the form of flawed terms and conditions. This is the reason why it is important to have a reliable documents filter system to ease the workload. The system has 3 main features: ingestion, analysis and presentation. The first part of the system takes in documents of certain formats (we are aiming for pdf file, plain text files, Microsoft word and Microsoft Powerpoint documents) and scans through the documents to identify the headers and sub-headers. It then exports the documents in plain text files including the added headers and sub-headers identifier for the second part of system to do work. The second part of the system not only groups the documents according to the clusters, it also does semantic checking to analyse the risk of the documents. The system is 'smart' because it will 'learn' as the process of feeding in documents progresses. That is, it will become more efficient in both identifying the clusters and analysing the risk. We are responsible to work on the last part of the system that is to present the results of the analysis to the user (lawyer), allowing the user not only to view, but also to provide feedback that will be input into the system to improve the accuracy and the level of intelligence. For that purpose, we are designing a web app that is both informative and simple to use.
 			</p>
+			<img id="workflow" src="../img/team_workflow.png" alt="Team Workflow">
 		</div>
 	</body>
 </html>

@@ -2,6 +2,15 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="../index.css">
 		<link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+		    function toggle_visibility(id) {
+		       var e = document.getElementById(id);
+		       if(e.style.display == 'block')
+		          e.style.display = 'none';
+		       else
+		          e.style.display = 'block';
+		    }
+		</script>
 	</head>
 
 	<body>
@@ -12,7 +21,7 @@
 				</p>
 			</a>
 			<div class="gitHub">
-				<a href="https://github.com/ralucavacaru/clifford1"> <img src="../img/gitHub.png" alt="GitHub"> </a>
+				<a href="https://github.com/YeeChong94/DocMuncher"> <img src="../img/gitHub.png" alt="GitHub"> </a>
 			</div>
 		</div>
 
@@ -28,32 +37,32 @@
 						Project Background
 					</li>
 				</a>
-				<a href="research.html">
+				<a href="requirements.html">
 					<li class="button">
-						Research
+						Requirements
 					</li>
 				</a>
 				<a href="development.html">
 					<li class="button">
-						Development
+						DResearch and evelopment
 					</li>
 				</a>
-				<a href="features.html">
+				<a href="testing.html">
 					<li class="button">
-						Features
+						Testing
 					</li>
 				</a>
 				<li class="button">
 					<a href="#">Team Record</a>
 					<ul>
-						<a href="minutes.html">
-							<li class="dropDownButton">
-								Meeting Minutes
-							</li>
-						</a>
 						<a href="biweekly.html">
 							<li class="dropDownButton">
 								Bi-Weekly Reports
+							</li>
+						</a>
+						<a href="video.html">
+							<li class="dropDownButton">
+								Video
 							</li>
 						</a>
 					</ul>
@@ -66,10 +75,30 @@
 			</ul>
 		</nav>
 
+		<nav class="logos">
+			<a href="http://www.microsoft.com">
+				<img src="../img/microsoft.png">
+			</a>
+			<a href="http://www.cliffordchance.com/">
+				<img src="../img/cliffordchance.png">
+			</a>
+		</nav>
+
 		<div class="content">
-			<p class="contentText">
-				This will be timeline of term 2.
-			</p>
+			<h1>Gantt Charts</h1>
+			<div class="contentText">
+				<a class="toggle" href="#" onclick="toggle_visibility('gantt2');">[+] Term 2</a>
+				<div style="display:none" id="gantt2">
+					<img src="../img/gantt.png" alt="Gantt Chart">
+				</object>
+				</div>
+				
+				<a class="toggle" href="#" onclick="toggle_visibility('gantt1');">[+] Term 1</a>
+				<div style="display:none" id="gantt1">
+					<img src="../img/term1.png" alt="Gantt Chart">
+				</object>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
