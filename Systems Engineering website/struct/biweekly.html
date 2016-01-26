@@ -1,0 +1,120 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../index.css">
+		<link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+		    function toggle_visibility(id) {
+		       var e = document.getElementById(id);
+		       if(e.style.display == 'block')
+		          e.style.display = 'none';
+		       else
+		          e.style.display = 'block';
+		    }
+		</script>
+	</head>
+
+	<body>
+		<div class="header">
+			<a href="../index.html">	
+				<p class="title">
+					Team 38
+				</p>
+			</a>
+			<div class="gitHub">
+				<a href="https://github.com/YeeChong94/DocMuncher"> <img src="../img/gitHub.png" alt="GitHub"> </a>
+			</div>
+		</div>
+
+		<nav class="menu">
+			<ul>
+				<a href="../index.html">
+					<li class="button">
+						Home
+					</li>
+				</a>
+				<a href="background.html">
+					<li class="button">
+						Project Background
+					</li>
+				</a>
+				<a href="requirements.html">
+					<li class="button">
+						Requirements
+					</li>
+				</a>
+				<a href="development.html">
+					<li class="button">
+						Research and Development
+					</li>
+				</a>
+				<a href="testing.html">
+					<li class="button">
+						Testing
+					</li>
+				</a>
+				<li class="button" id="selected">
+					<a href="#">Team Record</a>
+					<ul>
+						<a href="#">
+							<li class="dropDownButton" id="selected">
+								Bi-Weekly Reports
+							</li>
+						</a>
+						<a href="video.html">
+							<li class="dropDownButton">
+								Video
+							</li>
+						</a>
+					</ul>
+				</li>
+				<a href="future.html">
+					<li class="button">
+						Future Plans
+					</li>
+				</a>
+			</ul>
+		</nav>
+		
+		<nav class="logos">
+			<a href="http://www.microsoft.com">
+				<img src="../img/microsoft.png">
+			</a>
+			<a href="http://www.cliffordchance.com/">
+				<img src="../img/cliffordchance.png">
+			</a>
+		</nav>
+
+		<div class="content">
+			<h1>Bi-Weekly Reports</h1>
+			<div class="contentText">
+				<a class="toggle" href="#" onclick="toggle_visibility('report4');">[+] 27 November 2015</a>
+				<div style="display:none" id="report4">
+					<object data="../reports/4.pdf" type="application/pdf" width="100%" height="100%">
+  					<p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="../reports/4.pdf">click here to download the PDF file.</a></p>
+				</object>
+				</div>
+
+				<a class="toggle" href="#" onclick="toggle_visibility('report3');">[+] 15 November 2015</a>
+				<div style="display:none" id="report3">
+					<object data="../reports/3.pdf" type="application/pdf" width="100%" height="100%">
+  					<p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="../reports/3.pdf">click here to download the PDF file.</a></p>
+				</object>
+				</div>
+
+				<a class="toggle" href="#" onclick="toggle_visibility('report2');">[+] 30 October 2015</a>
+				<div style="display:none" id="report2">
+					<object data="../reports/2.pdf" type="application/pdf" width="100%" height="100%">
+  					<p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="../reports/2.pdf">click here to download the PDF file.</a></p>
+				</object>
+				</div>
+				
+				<a class="toggle" href="#" onclick="toggle_visibility('report1');">[+] 16 October 2015</a>
+				<div style="display:none" id="report1">
+					<object data="../reports/1.pdf" type="application/pdf" width="100%" height="100%">
+  					<p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="../reports/1.pdf">click here to download the PDF file.</a></p>
+				</object>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

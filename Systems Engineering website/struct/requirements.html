@@ -1,0 +1,534 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../index.css">
+		<link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<div class="header">
+			<a href="../index.html">	
+				<p class="title">
+					Team 38
+				</p>
+			</a>
+			<div class="gitHub">
+				<a href="https://github.com/YeeChong94/DocMuncher"> <img src="../img/gitHub.png" alt="GitHub"> </a>
+			</div>
+		</div>
+
+		<nav class="menu">
+			<ul>
+				<a href="../index.html">
+					<li class="button">
+						Home
+					</li>
+				</a>
+				<a href="background.html">
+					<li class="button">
+						Project Background
+					</li>
+				</a>
+				<a href="#">
+					<li class="button" id="selected">
+						Requirements
+					</li>
+				</a>
+				<a href="development.html">
+					<li class="button">
+						Research and Development
+					</li>
+				</a>
+				<a href="testing.html">
+					<li class="button">
+						Testing
+					</li>
+				</a>
+				<li class="button">
+					<a href="#">Team Record</a>
+					<ul>
+						<a href="biweekly.html">
+							<li class="dropDownButton">
+								Bi-Weekly Reports
+							</li>
+						</a>
+						<a href="video.html">
+							<li class="dropDownButton">
+								Video
+							</li>
+						</a>
+					</ul>
+				</li>
+				<a href="future.html">
+					<li class="button">
+						Future Plans
+					</li>
+				</a>
+			</ul>
+		</nav>
+
+		<nav class="logos">
+			<a href="http://www.microsoft.com">
+				<img src="../img/microsoft.png">
+			</a>
+			<a href="http://www.cliffordchance.com/">
+				<img src="../img/cliffordchance.png">
+			</a>
+		</nav>
+		
+		<div class="content">
+			<h1>Requirements</h1>
+			<p class="contentText">
+				The requirements we have gathered below have been obtained from: Client interviews, Use cases, UI prototyping
+			</p>
+			<h1>Functional Requirements - MoSCoW</h1>
+			<h2>Must Have</h2>
+			<ul class="contentText">
+				<li>The web app shall display the number of documents ingested.</li>
+				<li>The web app shall display the number of risky clusters and documents.</li>
+				<li>The web app shall allow the user to create a new project.</li>
+				<li>The web app shall let the user switch between projects on the home tab.</li>
+				<li>The web app shall let user have an overall view of the clusters on the Project Overview tab.</li>
+				<li>The web app shall display all the documents in a cluster on the Cluster Overview tab.</li>
+				<li>The web app shall allow user to view the scanned documents.</li>
+				<li>The web app shall have simple tabs for user navigation.</li>
+			</ul>
+			<h2>Should Have</h2>
+			<ul class="contentText">
+				<li>The web app shall be able to authenticate users and display projects that are associated to each user correctly.</li>
+				<li>The web app shall implement a database system, which is used by the second part of the system as well.</li>
+				<li>The web app shall label the risky part of the documents clearly.</li>
+				<li>The web app shall allow the user to add in new document to be ingested by the system.</li>
+				<li>The web app shall provide two kinds of views in Project Overview, which feature both 3D (Pie Chart) and 2D (Table).</li>
+			</ul>
+			<h2>Could Have</h2>
+			<ul class="contentText">
+				<li>The web app shall allow the user to save a document to read it later.</li>
+				<li>The web app shall allow the user to comment on the save-for-later-document for easier reference.</li>
+				<li>The web app shall allow the user to give feedback to the system on the risky components.</li>
+				<li>The web app shall allow the user to open the original document.</li>
+				<li>The web app shall allow the user to trace back the clustering of the document.</li>
+				<li>The web app shall allow the user to edit the name of the project.</li>
+			</ul>
+			<h2>Would Have</h2>
+			<ul class="contentText">
+				<li>The web app shall implement a more complex admin system, which only certain users can create, edit projects and assign normal users to projects.</li>
+				<li>The web app shall allow document preview on the Saved for Later tab.</li>
+				<li>The web app shall allow the user to print the document in both edited and unedited form.</li>
+				<li>The web app shall have pop-up tips of using the web app at the side.</li>
+			</ul>
+			</br>
+			<h1>Non-Functional Requirements</h1>
+			<ul class="contentText">
+				<li>The web app shall be colour coded and simple to use.</li>
+				<li>The web app shall authenticate user in three seconds or less.</li>
+				<li>The web app shall offer real time feedback, that is, able to show the changes made by user right after editing.</li>
+				<li>The web app shall use font that is elegant and easy to read.</li>
+				<li>The web app shall be available 24 hours a day, 7 days a week.</li>
+			</ul>
+			</br>
+			<h1>Use Cases</h1>
+			<table class="useCases">
+				<tr>
+					<th>
+						Use Case
+					</th>
+					<th>
+						NewUser
+					</th>
+				</tr>
+				<tr>
+					<td>
+						ID
+					</td>
+					<td>
+						1
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Brief Description
+					</td>
+					<td>
+						A user requests a new account.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Primary Actors
+					</td>
+					<td>
+						User
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Secondary Actors
+					</td>
+					<td>
+						None
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Preconditions
+					</td>
+					<td>
+						User is not logged in, does not have an account
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Main Flow
+					</td>
+					<td>				
+						1. The user clicks on register an account on login page. </br>
+						2. System generates a detail form to be filled in by the user. </br>
+						3. User (lawyer) fills in details and submit. </br>
+						4. System records the data in database.</br>
+						5. New user registered.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Post conditions
+					</td>
+					<td>				
+						1. System redirects to Login Page.</br>
+						2. User can now login.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Alternative flows
+					</td>
+					<td>				
+						Failed to register new account, error message(s) shown on same page</br>
+						A) Duplicate email.</br>
+						B) Field(s) left blank.</br>
+					</td>
+				</tr>
+			</table>
+
+			<table class="useCases">
+				<tr>
+					<th>
+						Use Case
+					</th>
+					<th>
+						Login
+					</th>
+				</tr>
+				<tr>
+					<td>
+						ID
+					</td>
+					<td>
+						2
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Brief Description
+					</td>
+					<td>
+						User attempts to login.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Primary Actors
+					</td>
+					<td>
+						User
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Secondary Actors
+					</td>
+					<td>
+						None
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Preconditions
+					</td>
+					<td>
+						User not logged in, owns an account
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Main Flow
+					</td>
+					<td>				
+						1. User types in Username and Password.</br>
+						2. User clicks on login button.</br>
+						3. System checks if the Username and Password are matched or exist.</br>
+						4. If Username and Password matched, system authenticate user.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Post conditions
+					</td>
+					<td>				
+						1. System redirects user to Home Page.</br>
+						2. User is logged in.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Alternative flows
+					</td>
+					<td>				
+						Invalid Login, error message shown on same page "Invalid Login, please login using registered email address and password, or register"</br>
+					</td>
+				</tr>
+			</table>
+
+			<table class="useCases">
+				<tr>
+					<th>
+						Use Case
+					</th>
+					<th>
+						CreateNewProject
+					</th>
+				</tr>
+				<tr>
+					<td>
+						ID
+					</td>
+					<td>
+						3
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Brief Description
+					</td>
+					<td>
+						User wants to create a new project.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Primary Actors
+					</td>
+					<td>
+						User
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Secondary Actors
+					</td>
+					<td>
+						None
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Preconditions
+					</td>
+					<td>
+						User is logged in
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Main Flow
+					</td>
+					<td>				
+						1. User clicks on 'New Project' button to create new project.</br>
+						2. System generates a new project form to be filled in by the user.</br>
+						3. User fills in details and clicks submit.</br>
+						4. The system records the data in database.</br>
+						5. New project created.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Post conditions
+					</td>
+					<td>				
+						New project is created and is available to view from project tabs.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Alternative flows
+					</td>
+					<td>				
+						None
+					</td>
+				</tr>
+			</table>
+
+			<table class="useCases">
+				<tr>
+					<th>
+						Use Case
+					</th>
+					<th>
+						AddDocuments
+					</th>
+				</tr>
+				<tr>
+					<td>
+						ID
+					</td>
+					<td>
+						4
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Brief Description
+					</td>
+					<td>
+						User wants to add new documents into the project.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Primary Actors
+					</td>
+					<td>
+						User
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Secondary Actors
+					</td>
+					<td>
+						None
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Preconditions
+					</td>
+					<td>
+						1. User is logged in. </br>
+						2. A project is created </br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Main Flow
+					</td>
+					<td>				
+						1. On either Home Page or Project Overview Page, User clicks on 'add document' button to add new documents.</br>
+						2. A pop-up windows appears, showing system directory for user to select files in certain format.</br>
+						3. User select files and click done.</br>
+						4. System ingests the documents and analyse them.</br>
+						5. The new documents are now grouped according to their clusters.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Post conditions
+					</td>
+					<td>				
+						1. New project now contains more documents.</br>
+						2. New cluster might be created.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Alternative flows
+					</td>
+					<td>				
+						None
+					</td>
+				</tr>
+			</table>
+
+			<table class="useCases">
+				<tr>
+					<th>
+						Use Case
+					</th>
+					<th>
+						ViewingAnalysisResult
+					</th>
+				</tr>
+				<tr>
+					<td>
+						ID
+					</td>
+					<td>
+						5
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Brief Description
+					</td>
+					<td>
+						User wants to have an overall view of the results.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Primary Actors
+					</td>
+					<td>
+						User
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Secondary Actors
+					</td>
+					<td>
+						None
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Preconditions
+					</td>
+					<td>
+						1. User is logged in. </br>
+						2. Documents have been analysed.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Main Flow
+					</td>
+					<td>				
+						1. User clicks on Project Overview Page.</br>
+						2. System displays Clusters in form of Pie chart to allow users to have an overall idea of the main cluster.</br>
+						3. User hovers the mouse over one of the clusters.</br>
+						4. The big cluster then breaks down into smaller clusters, which allow user to click on it to view the documents under that particular cluster.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Post conditions
+					</td>
+					<td>				
+						User is able to view the documents with risk analysis.</br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Alternative flows
+					</td>
+					<td>				
+						None
+					</td>
+				</tr>
+			</table>
+
+			</br>
+			</br>
+		</div>
+	</body>
+</html>
