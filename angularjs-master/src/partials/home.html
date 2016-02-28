@@ -1,0 +1,52 @@
+<div class="headLine" style="border-top: thick solid #30afa4"/>
+
+<div class="wrapper" ng-controller="HomeCtrl">
+	
+	<!-- Projects Navigation Bar -->
+	<nav class="projectNavBar">
+		<ul>
+			<div ng-repeat="project in projects">
+				<a href=''>
+					<li class="projectButton" ng-click="setMaster(project)">
+						<p
+						ng-mouseenter="hover = true"
+     					ng-mouseleave="hover = false" 
+						ng-style="(selected === project || hover) && {'background-color': 'rgba(48,175,164,0.2)'}">
+							{{ project.name }}
+						</p>
+					</li>
+				</a>
+			</div>
+			<li class="projectButton" ng-click="setMaster(new)" id="newProject">
+				<p
+				ng-mouseenter="hoverNew = true"
+				ng-mouseleave="hoverNew = false" 
+				ng-style="(selected === new || hoverNew) && {'background-color': 'rgba(48,175,164,0.2)'}">
+					New Project
+				</p>
+			</li>
+		</ul>
+	</nav>
+
+	
+	<!-- New Project Form -->
+	<div ng-if="selected === new" class="newProjectForm">
+		<h1> New Project </h1>
+		<form>
+			<span>Project Name:</span></br><input type="text" ng-model="name"> </br>
+			<span>Description:</span></br><textarea name="Text1" cols="40" rows="5" ... ></textarea> </br>
+			<span>People:</span> </br><input type="text" ng-model="people"> </br>
+			<span>Documents:</span> </br><input type="text" ng-model="documents"> </br>
+			<a href=''><input type="submit" value="Create Project"></a>
+		</form>
+	</div>
+
+	<!-- Overview Box -->
+	<div ng-if="selected !== new" class="documentOverview">
+		<h1>{{ selected.name }}</h1>
+		<p>Documents ingested: <b>{{ selected.ingested }}</b></p>
+		<p>Risky clusters: <b>{{ selected.riskyClusters }}</b></p>
+		<p>Risky documents: <b>{{ selected.riskyDocuments }}</b></p>
+	</div>
+
+</div>

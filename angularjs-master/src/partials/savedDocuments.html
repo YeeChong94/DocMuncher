@@ -1,0 +1,38 @@
+<div class="headLine" style="border-top: thick solid #aac327"/>
+
+<div class="savedwrapper" ng-controller="SavedCtrl">
+
+	<!-- Saved Documents NavBar -->
+	<table class="clusterOverviewTable column-left saved-documents">
+		<tr>
+			<th id="savedHeadline">Saved Documents</th>
+		</tr>
+		
+		<tr ng-repeat="document in documents">
+			<td ng-click="setMaster(document)">
+				<span class="documentName">
+					{{ document.name }}
+				</span>
+				<span class="documentPercentage" 
+					ng-attr-id="{{
+						document.risk>60 && 'risk' || 
+						document.risk<30 && 'riskFree' ||
+						'borderline'}}">
+					{{ document.risk }}%
+				</span>
+			</td>
+		</tr>
+
+	</table>
+
+	<!-- Preview -->
+	<embed class="savedPreview" embed-src="{{selected.link}}" width="500" height="375" type='application/pdf'>
+
+	<!-- Notes -->
+	<figure id="notesWrapper">
+		<figcaption>
+			Notes
+		</figcaption>
+		<textarea id="savedNotes" rows="5" cols="50">{{selected.notes}}</textarea>
+	</figure>
+</div>
