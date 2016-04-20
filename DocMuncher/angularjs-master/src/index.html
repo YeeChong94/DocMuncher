@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="DocMuncher">
+<head>
+	<title>DocMuncher</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<script src="resources/js/angularjstutorial-deps.js"></script>
+	<script src="resources/js/controllers.js"></script>
+	<script src="resources/js/angular-route-min.js"></script>
+
+	<link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body>
+	<!-- Nav Bar -->
+	<nav class="header" ng-controller="HeaderCtrl">
+		<ul>
+			<div ng-repeat="tab in tabs">
+				<a href='{{ tab.link }}'>
+					<li class="button" ng-style="{'background-color': tab.color}" ng-click='changeActive(tab.name)' ng-attr-id="{{tab.active}}" >
+						{{ tab.name }}
+					</li>
+				</a>
+			</div>
+		</ul>
+	</nav>
+
+	<!-- Injected Content -->
+	<ng-view></ng-view>
+
+</body>
+</html>

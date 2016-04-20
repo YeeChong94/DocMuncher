@@ -1,0 +1,24 @@
+<div class="headLine" style="border-top: thick solid #30afa4"/>
+
+<div class="wrapper" ng-controller="HomeCtrl">
+	<nav class="projectNavBar">
+		<ul>
+			<div ng-repeat="project in projects">
+				<a href='{{ project.link }}'>
+					<li class="projectButton" ng-attr-id="{{project.active}}" ng-click="activeProject = project">
+						<p>{{ project.name }}</p>
+					</li>
+				</a>
+			</div>
+		</ul>
+	</nav>
+
+	<!-- <ng-view></ng-view> -->
+
+	<div class="documentOverview">
+		<p>Documents ingested: {{ activeProject.ingested }}</p>
+		<p>Risky clusters: {{ activeProject.riskyClusters }}</p>
+		<p>Risky documents: {{ activeProject.riskyDocuments }}</p>
+	</div>
+
+</div>

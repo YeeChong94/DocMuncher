@@ -1,0 +1,82 @@
+html {
+	background: url("../img/background.png");
+	font-family: 'Droid Sans', sans-serif;
+}
+body {
+	margin: 0;
+}
+
+.header {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: none;
+}
+.header ul {
+	display: table-row;
+}
+.header ul div {
+	display: table-cell;
+}
+.header ul div a {
+	text-decoration: none;
+	margin: 0;
+}
+.button {
+	text-decoration: none;
+	color: white;
+	list-style: none;
+	text-align: center;
+	font-size: 16px;
+	padding: 9px;
+	opacity: 0.7;
+}
+.button:hover {
+	opacity: 1;
+}
+
+#active {
+	opacity: 1;
+}
+
+/* Home */
+.projectNavBar {
+	margin-top: 60px;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: none;
+}
+.projectNavBar ul {
+	display: table-row;
+}
+.projectNavBar ul div {
+	display: table-cell;
+}
+.projectNavBar ul div a {
+	text-decoration: none;
+	margin: 0;
+}
+.projectButton {
+	text-decoration: none;
+	color: #30afa4;
+	list-style: none;
+	text-align: center;
+	font-size: 16px;
+	padding-left: 9px;
+	padding-right: 9px;
+	opacity: 0.7;
+}
+.projectButton p {
+	border: thin solid #30afa4;
+	border-radius: 4px;
+	padding: 5px;
+	font-size: 14px;
+}
+
+
+
+
+

@@ -1,0 +1,12 @@
+<!-- Nav Bar -->
+	<nav class="header" ng-controller="HeaderCtrl">
+		<ul>
+			<div ng-repeat="tab in tabs">
+				<a href='{{ tab.link }}'>
+					<li class="button" ng-style="{'background-color': tab.color}" ng-attr-id="{{ tab.active }}">
+						{{ tab.name }}
+					</li>
+				</a>
+			</div>
+		</ul>
+	</nav>
