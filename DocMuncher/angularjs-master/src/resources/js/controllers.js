@@ -34,8 +34,14 @@ DocMuncher.controller('HeaderCtrl', function ($scope) {
             active: 'active',
         },
     ];
-    $scope.changeActive = function(tabName) {
-        $scope.activeTab = tabName;
+
+    $scope.selectedTab = $scope.tabs[0];
+    $scope.setMasterTab = function(tab) {
+        $scope.selectedTab = tab;
+    }
+
+    $scope.isSelectedTab = function(tab) {
+        return $scope.selectedTab === tab;
     }
 });
 
@@ -74,49 +80,137 @@ DocMuncher.controller('PageCtrl', function (/* $scope, $location, $http */) {
 
 DocMuncher.controller('HomeCtrl', function ($scope) {
     $scope.projects = [
-    {
+        {
+            id: 1,
+            name: 'Specific performance clauses in national legislation of European States',
+            link: '#',
+            active: 'active',
+            ingested: 43232,
+            riskyClusters: 34,
+            riskyDocuments: 653,
+        },
+        {
+            id: 2,
+            name: 'Infringment procedures against national states on a specific directive',
+            link: '#',
+            active: 'active',
+            ingested: 5636,
+            riskyClusters: 65,
+            riskyDocuments: 324,
+        },
+        {
+            id: 3,
+            name: 'Conditions precedent on Free Hill loan agreement',
+            link: '#',
+            active: 'active',
+            ingested: 545,
+            riskyClusters: 542,
+            riskyDocuments: 55555,
+        },
+        {
+            id: 4,
+            name: 'National legislation on unfair contract terms',
+            link: '#',
+            active: 'active',
+            ingested: 4522,
+            riskyClusters: 5,
+            riskyDocuments: 54,
+        },
+        {
+            id: 5,
+            name: 'Definition and verification of securities in a loan agreement',
+            link: '#',
+            active: 'active',
+            ingested: 432432,
+            riskyClusters: 34,
+            riskyDocuments: 4322,
+        }
+    ];
+
+    $scope.new = {
+        name: 'New Project',
+    }
+
+    $scope.selected = {
         id: 1,
-        name: 'Project 1',
+        name: 'Overview',
         link: '#',
         active: 'active',
-        ingested: 43232,
-        riskyClusters: 34,
-        riskyDocuments: 653,
-    },
-    {
-        id: 2,
-        name: 'Project 2',
-        link: '#',
-        active: 'active',
-        ingested: 5636,
-        riskyClusters: 65,
-        riskyDocuments: 324,
-    },
-    {
-        id: 3,
-        name: 'Project 3',
-        link: '#',
-        active: 'active',
-        ingested: 545,
-        riskyClusters: 542,
-        riskyDocuments: 55555,
-    },
-    {
-        id: 4,
-        name: 'Project 4',
-        link: '#',
-        active: 'active',
-        ingested: 4522,
-        riskyClusters: 5,
-        riskyDocuments: 54,
-    },
-    {
-        id: 5,
-        name: 'Project 5',
-        link: '#',
-        active: 'active',
-        ingested: 432432,
-        riskyClusters: 34,
-        riskyDocuments: 4322,
-    }];
+        ingested: 32432432,
+        riskyClusters: 324,
+        riskyDocuments: 342342,
+    }
+
+    $scope.setMaster = function(project) {
+        $scope.selected = project;
+    }
+
+    $scope.isSelected = function(project) {
+        return $scope.selected === project;
+    }
 });
+
+DocMuncher.controller('SavedCtrl', function ($scope) {
+    $scope.documents = [
+        {
+            id: 1,
+            name: 'Document 1',
+            link: '../resources/pdf/1.pdf',
+            risk: 87,
+            notes: 'Blablablabla',
+        },
+        {
+            id: 2,
+            name: 'Document 2',
+            link: '../resources/pdf/2.pdf',
+            risk: 43,
+            notes: 'Blablablablablabla',
+        },
+        {
+            id: 3,
+            name: 'Document 3',
+            link: '../resources/pdf/3.pdf',
+            risk: 3,
+            notes: 'Blablablablablablablablabla',
+        },
+        {
+            id: 4,
+            name: 'Document 4',
+            link: '../resources/pdf/4.pdf',
+            risk: 78,
+            notes: 'Blabla',
+        },
+    ];
+
+    $scope.new = {
+        name: 'New Project',
+    }
+
+    $scope.selected = $scope.documents[0];
+
+    $scope.setMaster = function(doc) {
+        $scope.selected = doc;
+    }
+
+    $scope.isSelected = function(doc) {
+        return $scope.selected === doc;
+    }
+});
+
+// Use for embedding pdf files.
+// Syntax: <embed embed-src="..." type='application/pdf'>
+DocMuncher.directive('embedSrc', function () {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                var current = element;
+                scope.$watch(function() { return attrs.embedSrc; }, function () {
+                    var clone = element
+                              .clone()
+                              .attr('src', attrs.embedSrc);
+                    current.replaceWith(clone);
+                    current = clone;
+                });
+            }   
+        };
+    })
