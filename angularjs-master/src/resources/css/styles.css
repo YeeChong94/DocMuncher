@@ -349,11 +349,9 @@ button:focus {
 /****************************** PROJECT OVERVIEW ***************************/
 
 #pie-chart-container {
-	padding-top: 70px;
 	background-color: rgba (0,0,0,0);
 }
 
-
-
-
-
+#proj .projectButton p {
+	border: 1px solid #009fda !important;
+}

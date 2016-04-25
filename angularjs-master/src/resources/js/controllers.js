@@ -298,7 +298,17 @@ DocMuncher.controller('ProjectCtrl', function ($scope, currentProject) {
             }]
         }
     });
-});
+    });
+
+    $scope.selected = 1;
+
+    $scope.setMaster = function(aux) {
+        $scope.selected = aux;
+    }
+
+    $scope.isSelected = function(aux) {
+        return $scope.selected === aux;
+    }
 });
 
 // Use for embedding pdf files.

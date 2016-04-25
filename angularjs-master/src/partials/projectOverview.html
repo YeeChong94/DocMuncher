@@ -1,5 +1,32 @@
 <div class="headLine" style="border-top: thick solid #009fda"/>
 
 <div ng-controller='ProjectCtrl'>
-	<div id="pie-chart-container" style="min-width: 310px; max-width: 600px; height: 500px; margin: 0 auto; background-color: none;"></div>
+	<nav class="projectNavBar" id='proj'>
+		<ul>
+			<li class="projectButton" ng-click="setMaster(0)">
+				<p
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false" 
+				ng-style="(selected === 0 || hover) && {'background-color': 'rgba(0,159,218,0.2)'}">
+					Matrix Mode
+				</p>
+			</li>
+			<li class="projectButton" ng-click="setMaster(1)">
+				<p
+				ng-mouseenter="hover = true"
+				ng-mouseleave="hover = false" 
+				ng-style="(selected === 1 || hover) && {'background-color': 'rgba(0,159,218,0.2)'}">
+					Pie Chart Mode
+				</p>
+			</li>
+		</ul>
+	</nav>
+
+	<div ng-show="selected">
+		<div id="pie-chart-container" style="min-width: 310px; max-width: 600px; height: 500px; margin: 0 auto;"></div>
+	</div>
+
+	<div ng-show="!selected">
+		Matrix
+	</div>
 </div>
