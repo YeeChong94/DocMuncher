@@ -143,6 +143,11 @@ button:focus {
 	margin-bottom: 20px;
 }
 
+#description {
+	font-style: italic;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
 /***************************************************************************/
 /************************** CLUSTER OVERVIEW *******************************/
 
@@ -340,6 +345,13 @@ button:focus {
 	height: 450px;
 }
 
+/***************************************************************************/
+/****************************** PROJECT OVERVIEW ***************************/
+
+#pie-chart-container {
+	padding-top: 70px;
+	background-color: rgba (0,0,0,0);
+}
 
 
 
