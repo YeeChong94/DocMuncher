@@ -146,6 +146,8 @@ button:focus {
 #description {
 	font-style: italic;
 	font-family: 'Roboto Condensed', sans-serif;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 /***************************************************************************/

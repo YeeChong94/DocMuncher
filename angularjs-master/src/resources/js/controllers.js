@@ -3,7 +3,9 @@ var DocMuncher = angular.module('DocMuncher', ['ngRoute']);
 DocMuncher.factory('UserService', function() {
   return {
     currentProject: '',
-    currentCluster: '',
+    currentCluster: {
+        name: '',
+    },
     currentTab: '',
     tabs: [
         {
@@ -279,42 +281,33 @@ DocMuncher.controller('ProjectCtrl', function ($scope, UserService, $location) {
                     id: 'Risky',
                     colorByPoint: false,
                     data: [
-                        ['Cluster 1', 24.13],
-                        ['Cluster 2', 17.2],
-                        ['Cluster 3', 8.11],
-                        ['Cluster 4', 5.33],
-                        ['Cluster 5', 1.06],
-                        ['Cluster 6', 0.5]
+                        ['NDA', 28],
+                        ['HR Policies', 13],
+                        ['Supply of Goods', 8],
+                        ['IP Rights', 30],
+                        ['Unknown Cluster', 21]
                     ]
                 }, {
                     name: 'Risk-Free',
                     id: 'Risk-Free',
                     colorByPoint: false,
                     data: [
-                        ['Cluster 1', 5],
-                        ['Cluster 2', 4.32],
-                        ['Cluster 3', 3.68],
-                        ['Cluster 4', 2.96],
-                        ['Cluster 5', 2.53],
-                        ['Cluster 6', 1.45],
-                        ['Cluster 7', 1.24],
-                        ['Cluster 8', 0.85],
-                        ['Cluster 9', 1.24],
-                        ['Cluster 10', 0.85]
+                        ['NDA', 48],
+                        ['HR Policies', 8],
+                        ['Supply of Goods', 19],
+                        ['IP Rights', 12],
+                        ['Unknown Cluster', 13]
                     ]
                 }, {
                     name: 'Boderline',
                     id: 'Borderline',
                     colorByPoint: false,
                     data: [
-                        ['Cluster 1', 2.76],
-                        ['Cluster 2', 2.32],
-                        ['Cluster 3', 2.31],
-                        ['Cluster 4', 1.27],
-                        ['Cluster 5', 1.02],
-                        ['Cluster 6', 0.33],
-                        ['Cluster 7', 0.22],
-                        ['Cluster 8', 0.15]
+                        ['NDA', 13],
+                        ['HR Policies', 28],
+                        ['Supply of Goods', 10],
+                        ['IP Rights', 40],
+                        ['Unknown Cluster', 9]
                     ]
                 }]
             }
@@ -375,7 +368,10 @@ DocMuncher.controller('ProjectCtrl', function ($scope, UserService, $location) {
                     point: {
                         events: {
                             select: function() {   
-                                UserService.currentCluster = this;
+                                var aux = this.series.xAxis.categories[this.x].toString() + " with " + this.series.yAxis.categories[this.y].toString();
+                                UserService.currentCluster.name = aux;
+                                console.log(this.series.xAxis.categories[this.x]);
+                                console.log(UserService.currentCluster.name);
                                 UserService.currentTab = UserService.tabs[2];
                                 $scope.$apply(function() { $location.path("/clusterOverview"); });
                             }
@@ -433,6 +429,7 @@ DocMuncher.controller('ProjectCtrl', function ($scope, UserService, $location) {
 DocMuncher.controller('ClusterCtrl', function ($scope, UserService) {
     $scope.currentCluster = UserService.currentCluster;
 });
+
 // Use for embedding pdf files.
 // Syntax: <embed embed-src="..." type='application/pdf'>
 DocMuncher.directive('embedSrc', function () {
