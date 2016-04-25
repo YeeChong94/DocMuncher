@@ -22,11 +22,12 @@
 		</ul>
 	</nav>
 
+	<h1 id="title">{{ currentProject.name }}</h1>
 	<div ng-show="selected">
-		<div id="pie-chart-container" style="min-width: 310px; max-width: 600px; height: 500px; margin: 0 auto;"></div>
+		<div id="pie-chart-container"></div>
 	</div>
 
 	<div ng-show="!selected">
-		Matrix
+		<div id="heat-map-container"></div>
 	</div>
 </div>
