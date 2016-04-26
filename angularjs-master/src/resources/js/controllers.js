@@ -7,6 +7,7 @@ DocMuncher.factory('UserService', function() {
         name: '',
     },
     currentTab: '',
+    currentDoc: '',
     tabs: [
         {
             name: 'Home',
@@ -32,6 +33,92 @@ DocMuncher.factory('UserService', function() {
             name: 'Saved Documents',
             color: '#aac327',
             link: '#/savedDocuments',
+        },
+    ],
+    documents: [
+        {
+            name: 'Document 1',
+            risk: 23,
+            link: '../resources/pdf/1.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 2',
+            risk: 85,
+            link: '../resources/pdf/2.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 3',
+            risk: 56,
+            link: '../resources/pdf/3.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 4',
+            risk: 76,
+            link: '../resources/pdf/4.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 5',
+            risk: 16,
+            link: '../resources/pdf/5.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 6',
+            risk: 73,
+            link: '../resources/pdf/6.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 7',
+            risk: 13,
+            link: '../resources/pdf/7.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 8',
+            risk: 14,
+            link: '../resources/pdf/8.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 9',
+            risk: 32,
+            link: '../resources/pdf/9.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 10',
+            risk: 58,
+            link: '../resources/pdf/10.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 11',
+            risk: 64,
+            link: '../resources/pdf/11.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 12',
+            risk: 70,
+            link: '../resources/pdf/12.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 13',
+            risk: 42,
+            link: '../resources/pdf/13.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
+        },
+        {
+            name: 'Document 14',
+            risk: 58,
+            link: '../resources/pdf/14.pdf',
+            notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a aliquet mauris, sed bibendum dui. Etiam posuere risus ac purus ornare imperdiet. Ut nec elit dictum, maximus dui non, facilisis turpis.',
         },
     ]
   };
@@ -271,7 +358,7 @@ DocMuncher.controller('ProjectCtrl', function ($scope, UserService, $location) {
                     drilldown: 'Risk-Free'
                 }, {
                     name: 'Borderline',
-                    y: 10.38,
+                    y: 19.64,
                     drilldown: 'Borderline'
                 }]
             }],
@@ -425,9 +512,27 @@ DocMuncher.controller('ProjectCtrl', function ($scope, UserService, $location) {
     }
 });
 
-
-DocMuncher.controller('ClusterCtrl', function ($scope, UserService) {
+DocMuncher.controller('ClusterCtrl', function ($scope, UserService, $location) {
     $scope.currentCluster = UserService.currentCluster;
+    $scope.documents = UserService.documents;
+
+    $scope.currentDoc = UserService.currentDoc;
+
+    $scope.setMasterDoc = function(doc) {
+        UserService.currentDoc = doc;
+        $scope.currentDoc = doc;
+        console.log(doc.name);
+    };
+
+    $scope.activateDoc = function(doc) {
+        UserService.currentTab = UserService.tabs[3];
+        $location.path("/documentOverview");
+    }
+});
+
+DocMuncher.controller('DocCtrl', function ($scope, UserService, $location) {
+    $scope.currentDoc = UserService.currentDoc;
+    console.log($scope.currentDoc.link);
 });
 
 // Use for embedding pdf files.

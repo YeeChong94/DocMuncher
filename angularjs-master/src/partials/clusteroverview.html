@@ -7,63 +7,17 @@
 		<tr>
 			<th id="riskHeadline">Risky Documents</th>
 		</tr>
-		<tr>
-			<td>
+		<tr ng-repeat="doc in documents" 
+		    ng-if="doc.risk >= 70"
+		    ng-click="setMasterDoc(doc); activateDoc(doc);">
+			<td ng-mouseenter="hover = true"
+     			ng-mouseleave="hover = false" 
+				ng-style="(doc.name === currentDoc.name || hover) && {'background-color': 'rgba(235,83,78,0.2)'}">
 				<span class="documentName">
-					Document Name
+					{{ doc.name }}
 				</span>
 				<span class="documentPercentage" id="risk">
-					87%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="risk">
-					87%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="risk">
-					87%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="risk">
-					87%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="risk">
-					87%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="risk">
-					87%
+					{{ doc.risk }}%
 				</span>
 			</td>
 		</tr>
@@ -73,33 +27,17 @@
 		<tr>
 			<th id="borderlineHeadline">Borderline Documents</th>
 		</tr>
-		<tr>
-			<td>
+		<tr ng-repeat="doc in documents" 
+			ng-if="doc.risk < 70 && doc.risk >=40"
+			ng-click="setMasterDoc(doc); activateDoc(doc);">
+			<td ng-mouseenter="hover = true"
+     			ng-mouseleave="hover = false" 
+				ng-style="(doc.name === currentDoc.name || hover) && {'background-color': 'rgba(235,174,84,0.2)'}">
 				<span class="documentName">
-					Document Name
+					{{ doc.name }}
 				</span>
 				<span class="documentPercentage" id="borderline">
-					35%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="borderline">
-					35%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="borderline">
-					35%
+					{{ doc.risk }}%
 				</span>
 			</td>
 		</tr>
@@ -109,53 +47,17 @@
 		<tr>
 			<th id="riskFreeHeadline">Risk-Free Documents</th>
 		</tr>
-		<tr>
-			<td>
+		<tr ng-repeat="doc in documents" 
+			ng-if="doc.risk < 40"
+			ng-click="setMasterDoc(doc); activateDoc(doc);">
+			<td ng-mouseenter="hover = true"
+     			ng-mouseleave="hover = false" 
+				ng-style="(doc.name === currentDoc.name || hover) && {'background-color': 'rgba(77,184,83,0.2)'}">
 				<span class="documentName">
-					Document Name
+					{{ doc.name }}
 				</span>
 				<span class="documentPercentage" id="riskFree">
-					4%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="riskFree">
-					4%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="riskFree">
-					4%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="riskFree">
-					4%
-				</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span class="documentName">
-					Document Name
-				</span>
-				<span class="documentPercentage" id="riskFree">
-					4%
+					{{ doc.risk }}%
 				</span>
 			</td>
 		</tr>

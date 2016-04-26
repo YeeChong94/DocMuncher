@@ -216,17 +216,14 @@ button:focus {
 	width: 30%;
 	margin-left: 2.5%;
 }
-.table-risky td:hover {
+/*.table-risky td:hover {
 	background-color: rgba(235,83,78,0.2);
-}
+}*/
 .column-right { 
 	position: relative;
 	float: right; 
 	width: 30%;
 	right: 2.5%; 
-}
-.table-risk-free td:hover {
-	background-color: rgba(77,184,83,0.2);
 }
 .column-center {
 	display: inline-block; 
@@ -234,9 +231,6 @@ button:focus {
 	width: 30%; 
 	margin-left: 2.5%;
 	margin-right: 2.5%;
-}
-.table-borderline td:hover {
-	background-color: rgba(235,174,84,0.2);
 }
 
 /***************************************************************************/
@@ -283,8 +277,18 @@ button:focus {
 	background-color: (255, 255, 255, 0.4);
 }
 #notesWrapper figcaption {
+	display: block;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 20px;
+}
+
+.documentOverviewButtons h1{
+	position: relative;
+	left: 0;
+	right: 0;
+	top: 0px;
+	margin: 0;
+	text-align: center;
 }
 
 /***************************************************************************/
@@ -335,7 +339,7 @@ button:focus {
 	float: right;
 	right: 2.5%;
 	margin: 0;
-	top: 115px;
+	top: 140px;
 	width: 25%;
 	height: 100%;
 }
@@ -346,6 +350,13 @@ button:focus {
 	margin: 0;
 	height: 450px;
 }
+
+.documentOverviewButtons h1 {
+	font-size: 20px;
+	width: 300px;
+	padding: 0;
+}
+
 
 /***************************************************************************/
 /****************************** PROJECT OVERVIEW ***************************/

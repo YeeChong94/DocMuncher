@@ -1,10 +1,11 @@
 <div class="headLine" style="border-top: thick solid #be0f12"/>
 
-<div class="documentWrapper">
-	<embed class="documentPreview" embed-src="../resources/pdf/1.pdf" type='application/pdf'>
+<div class="documentWrapper" ng-controller="DocCtrl">
+	<embed class="documentPreview" embed-src={{currentDoc.link}} type='application/pdf'>
 
 	<!-- Button Pane -->
 	<nav class="documentOverviewButtons">
+		<h1>{{currentDoc.name}} [{{currentDoc.risk}}%]</h1>
 		<ul>
 			<li>Save</li>
 			<li>Trace</li>
@@ -16,6 +17,6 @@
 		<figcaption>
 			Notes
 		</figcaption>
-		<textarea id="savedNotes" rows="5" cols="50">Some text here</textarea>
+		<textarea id="savedNotes" rows="5" cols="50">{{currentDoc.notes}}</textarea>
 	</figure>
 </div>
