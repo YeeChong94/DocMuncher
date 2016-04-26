@@ -1,2 +1,0 @@
-# DocMuncher
-Microsoft-CliffordChance-SEProject

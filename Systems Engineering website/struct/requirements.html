@@ -40,7 +40,7 @@
 				</a>
 				<a href="testing.html">
 					<li class="button">
-						Testing
+						Guides and Testing
 					</li>
 				</a>
 				<li class="button">
@@ -60,7 +60,12 @@
 				</li>
 				<a href="future.html">
 					<li class="button">
-						Future Plans
+						Project Management
+					</li>
+				</a>
+				<a href="http://docmuncher.freeforums.net/">
+					<li class="button">
+						Forum
 					</li>
 				</a>
 			</ul>
@@ -83,47 +88,107 @@
 			<h1>Functional Requirements - MoSCoW</h1>
 			<h2>Must Have</h2>
 			<ul class="contentText">
-				<li>The web app shall display the number of documents ingested.</li>
+				<li>The web app shall display the number of documents ingested. <span class="comment">[DONE]</span></li>
 				<li>The web app shall display the number of risky clusters and documents.</li>
-				<li>The web app shall allow the user to create a new project.</li>
-				<li>The web app shall let the user switch between projects on the home tab.</li>
-				<li>The web app shall let user have an overall view of the clusters on the Project Overview tab.</li>
-				<li>The web app shall display all the documents in a cluster on the Cluster Overview tab.</li>
-				<li>The web app shall allow user to view the scanned documents.</li>
-				<li>The web app shall have simple tabs for user navigation.</li>
+				<li>The web app shall allow the user to create a new project. <span class="comment">[DONE]</span></li>
+				<li>The web app shall let the user switch between projects on the home tab. <span class="comment">[DONE]</span></li>
+				<li>The web app shall let the user have an overall view of the clusters on the Project Overview tab. <span class="comment">[DONE]</span></li>
+				<li>The web app shall display all the documents in a cluster on the Cluster Overview tab. <span class="comment">[DONE]</span></li>
+				<li>The web app shall allow the user to view the documents. <span class="comment">[DONE]</span></li>
+				<li>The web app shall have simple tabs for user navigation. <span class="comment">[DONE]</span></li>
 			</ul>
 			<h2>Should Have</h2>
 			<ul class="contentText">
-				<li>The web app shall be able to authenticate users and display projects that are associated to each user correctly.</li>
-				<li>The web app shall implement a database system, which is used by the second part of the system as well.</li>
-				<li>The web app shall label the risky part of the documents clearly.</li>
-				<li>The web app shall allow the user to add in new document to be ingested by the system.</li>
-				<li>The web app shall provide two kinds of views in Project Overview, which feature both 3D (Pie Chart) and 2D (Table).</li>
+				<li>
+					The web app shall be able to authenticate users and display projects that are associated to each user correctly. 
+					<span class="comment">[Canceled because our client mentioned that user authentication should not be a main concern for the app]</span>
+				</li>
+				<li>
+					The web app shall implement a database system, which is used by the second part of the system as well.
+					<span class="comment">[Slightly modified as we are now using mock data since the results from second part of the system is not accurate]</span>
+				</li>
+				<li>
+					The web app shall label the risky part of the documents clearly.
+					<span class="comment">[DONE]</span>
+				</li>
+				<li>
+					The web app shall allow the user to add in new document to be ingested by the system.
+					<span class="comment">[Modified as the documents should be added at the very start of system to go through part I and part II, which are responsible by team 39 and team 40]</span>
+				</li>
+				<li>
+					The web app shall provide two kinds of views in Project Overview, which feature both 3D (Pie Chart) and 2D (Table).
+					<span class="comment">[DONE]</span>
+				</li>
 			</ul>
 			<h2>Could Have</h2>
 			<ul class="contentText">
-				<li>The web app shall allow the user to save a document to read it later.</li>
-				<li>The web app shall allow the user to comment on the save-for-later-document for easier reference.</li>
-				<li>The web app shall allow the user to give feedback to the system on the risky components.</li>
-				<li>The web app shall allow the user to open the original document.</li>
-				<li>The web app shall allow the user to trace back the clustering of the document.</li>
-				<li>The web app shall allow the user to edit the name of the project.</li>
+				<li>
+					The web app shall allow the user to save a document to read it later.
+					<span class="comment">[DONE]</span>
+				</li>
+				<li>
+					The web app shall allow the user to comment on the save-for-later-document for easier reference.
+					<span class="comment">[DONE]</span>
+				</li>
+				<li>
+					The web app shall allow the user to give feedback to the system on the risky components.
+					<span class="comment">[Canceled by our client because there isn't a perfect way for the system to learn whether the information is correct for all]</span>
+				</li>
+				<li>
+					The web app shall allow the user to open the original document.
+					<span class="comment">[DONE]</span>
+				</li>
+				<li>
+					The web app shall allow the user to trace back the clustering of the document.
+					<span class="comment">[Modified, done with mock data]</span>
+				</li>
+				<li>
+					The web app shall allow the user to edit the name of the project.
+					<span class="comment">[Canceled by our client because he mentioned that the name of the project should not be altered]</span>
+				</li>
 			</ul>
 			<h2>Would Have</h2>
 			<ul class="contentText">
-				<li>The web app shall implement a more complex admin system, which only certain users can create, edit projects and assign normal users to projects.</li>
-				<li>The web app shall allow document preview on the Saved for Later tab.</li>
-				<li>The web app shall allow the user to print the document in both edited and unedited form.</li>
-				<li>The web app shall have pop-up tips of using the web app at the side.</li>
+				<li>
+					The web app shall implement a more complex admin system, which only certain users can create, edit projects and assign normal users to projects.
+					<span class="comment">[Canceled by our client]</span>
+				</li>
+				<li>
+					The web app shall allow document preview on the Saved for Later tab.
+					<span class="comment">[DONE]</span>
+				</li>
+				<li>
+					The web app shall allow the user to print the document in both edited and unedited form.
+					<span class="comment">[Canceled because it's not useful]</span>
+				</li>
+				<li>
+					The web app shall have pop-up tips of using the web app at the side.
+					<span class="comment">[Canceled because our client wants a simple app]</span>
+				</li>
 			</ul>
 			</br>
 			<h1>Non-Functional Requirements</h1>
 			<ul class="contentText">
-				<li>The web app shall be colour coded and simple to use.</li>
-				<li>The web app shall authenticate user in three seconds or less.</li>
-				<li>The web app shall offer real time feedback, that is, able to show the changes made by user right after editing.</li>
-				<li>The web app shall use font that is elegant and easy to read.</li>
-				<li>The web app shall be available 24 hours a day, 7 days a week.</li>
+				<li>
+					The web app shall be colour coded and simple to use.
+				<span class="comment">[DONE]</span>
+				</li>
+				<li>
+					The web app shall authenticate user in three seconds or less.
+				<span class="comment">[Modified, since user authentication is not required]</span>
+				</li>
+				<li>
+					The web app shall offer real time feedback, that is, able to show the changes made by user right after editing.
+				<span class="comment">[DONE]</span>
+				</li>
+				<li>
+					The web app shall use font that is elegant and easy to read.
+				<span class="comment">[DONE]</span>
+				</li>
+				<li>
+					The web app shall be available 24 hours a day, 7 days a week.
+				<span class="comment">[Due to confidentiality, the app is not open to public.]</span>
+				</li>
 			</ul>
 			</br>
 			<h1>Use Cases</h1>
