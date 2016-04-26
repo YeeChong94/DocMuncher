@@ -291,7 +291,7 @@ DocMuncher.controller('ProjectCtrl', function ($scope, UserService, $location) {
                 }
             }
         });
-        // Create the chart
+        // Create the pie chart
         $('#pie-chart-container').highcharts({
             chart: {
                 type: 'pie',
