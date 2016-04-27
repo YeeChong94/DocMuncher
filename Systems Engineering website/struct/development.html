@@ -85,6 +85,11 @@
 			<h1>Evaluation of the Final Solution</h1>
 			<p class='contentText'>We are quite happy with the outcome, as we managed to hit all the key requirements. We made sure that at every step of the way, the user knows exactly what they are doing, and what information they are looking at. Our data visualisation is straightforward and is based on charts that  are familiar to the average person. There is no need to learn how to read the data analysis, which makes the system easy to use for both experienced and inexperienced users.</p>
 			<p class='contentText'>We even managed to add in some extra functionality. The pie-chart is interactive, so users can get much more specific information. When clicking on the green slice, you get a chart that accounts only for the risk-free documents  Also, both charts can be exported. This can help with end-of-the-project reports or with justifying different decisions and keeping track of the evidence backing them up.</p>
+                <figure>
+                <figcaption>The interactive pie-chart</figcaption>
+                <img class="mockUp" src="../img/mockups/pie.gif">
+                </figure>
+
 			<p class='contentText'>We really think that once put together, this project can have a great impact on the industry, by automating a very tedious and error-prone process.</p>
 			<h1>Iterations and Forks in Prototypes</h1>
 			<h2>FIRST ITERATION</h2>
@@ -101,7 +106,64 @@
 			<p class='contentText'>Our sixth iteration was one of the longest ones, as we were unable implement a database that make perfect sense to the app. Finally, we decided to use Django as the backend and AngularJS as the front-end.</p>
 			<h2>SEVENTH ITERATION</h2>
 			<p class='contentText'>The seventh iteration removes the database link from the app because the need of portability of the app itself should use unified database that includes results from team 38 and 39. While they are still unable to produce that, we can't do much with a database with mock data and our client agreed that we shouldn't be wasting time on that.</p>
-			</br>
+			 </br>
+             <h1>Web App Walkthrough and Design Principles</h2>
+             <p class='contentText'>Now we are going to walk through the evolution of our web app since the mockups and the design principle behind it.</p>
+             <figure>
+                 <figcaption>Home</figcaption>
+                 <img class="mockUp" src="../img/mockups/1.png">
+             </figure>
+             <p class='contentText'>In order to make our design as easy to use as possible, the first step we took was to colour-code our app. Every tab has a specific colour scheme so that the user knows exactly where they are at all times (an idea inspired by the Clifford Chance website). We made sure to keep a very consistent colour scheme, so that colour signals can be used effectively by power users.
+             We also made sure that we place each view where it makes sense the most - hence going through the app is a very linear experience. The home tab leads you to the project overview, which leads you to cluster overview and so on. - this is known as the CONTINUITY DESIGN PRINCIPLE.
+As you can see, the web app displays key information about the projects clearly, and it is easy to switch between projects at any point. This helps the workflow and saves time for the user.</p>
+             <figure>
+                 <figcaption>New Project</figcaption>
+                 <img class="mockUp" src="../img/mockups/1.1.png">
+                     </figure>
+             <p class='contentText'>if you click on the new project button, you can enter the new project details into a form, and create a new project very easily. As you can see, we kept the look and feel of the new project form in line with the home page, to bring Unity to the interface (in line with the UNITY DESIGN PRINCIPLE).</p>
+             <figure>
+                 <figcaption>Project Overview with Heat Matrix</figcaption>
+                 <img class="mockUp" src="../img/mockups/2.2.png">
+             </figure>
+             <p class='contentText'></p>
+             <figure>
+                 <figcaption>Project Overview with Pie Chart</figcaption>
+                 <img class="mockUp" src="../img/mockups/2.1.png">
+                     </figure>
+             <p class='contentText'>We looked into different ways of data visualisation to present the results of the risk assessment. We have used a 2D heat-matrix and a drill-down pie chart to display clusters of documents by risk. On the 2D heat-matrix, users see clusters of documents organised by entities on the x axis and “kind” on the y-axis. The colours of the cells are determined by the risk percentage of the cluster. Similarly, the pie chart organises documents by risk assessment. </p>
+             <figure>
+                 <figcaption>Cluster Overview</figcaption>
+                 <img class="mockUp" src="../img/mockups/3.png">
+             </figure>
+             <p class='contentText'>This view groups documents according to their clusters, clicking on any of the documents will then lead you to the document overview page.</p>
+             <figure>
+                 <figcaption>Document Overview</figcaption>
+                 <img class="mockUp" src="../img/mockups/4.png">
+             </figure>
+             <p class='contentText'>We also have a document view, in which the user can read the document, take notes and get more information about the document. Upon getting in the semantics and structural assessment results from the other two teams, this page will enable the user to trace back the detailed analysis from the system.</p>
+             <figure>
+                 <figcaption>Saved Document Overview</figcaption>
+                 <img class="mockUp" src="../img/mockups/5.png">
+             </figure>
+             <p class='contentText'>The user can also save documents and view them later, along with the notes. This helps users to come back to the work more naturally, as it is easier to refer to notes on saved documents.</p>
+             </br>
+             <p class='contentText'>Aside from the design principles mentioned above, there are a few design patterns that we directly or indirectly implemented in our proof of concept, together with the idea of integration with Team 39 and Team 49:</p>
+             <ul class="contentText">
+                 <li>Builder - the construction (calculation and analysis) of data done by team 39 and 40 is seperated from the data representation, and hence, although having the same input, we can present them in different manners such as the heat matrix table and pie chart</li>
+                 <li>Lazy initialization - the lazy nature of highcharts design does not create the object until we really click on the pages that need it to be generated</li>
+                 <li>Module - Group several related elements, such as classes, singletons, methods, globally used, into a single conceptual entity.</li>
+                 <li>Null object - Avoid null references by providing a default object. i.e. if user doesn't provide documents while creating new project, then the document ingested will automatically be 0.'</li>
+             </ul>
+            </br>
+            <h1>Architecture Diagram</h1>
+            <p class='contentText'>Since we are doing the front-end of the system mainly, and even our database requirement was retracted as the results from the other 2 teams were not accurate enough to support all the visualisation method of the web app, we don't have much to talk about in architecture diagram. The only one that is related being Model-view-controller, taking into account is that once our code is integrated with the other 2 teams in future, then the presentation of data (View) done by us will be modelled by their analysis outcome (Model) depending on user requests (Controller)</p>
+            <figure>
+                <img class="mockUp" src="../img/mockups/MVC.svg">
+            </figure>
+            <p class='contentText'>Due to the nature of our project, we don't have much to display on architecture diagram as we are 1/3 of a whole system. While on the other hand, the other 2 teams will have much more to display on this regard.</p>
+             <ul>
+             <p class='contentText'></p>
+             </br>
 			<h2>FORKS ON GITHUB</h2>
 			<p class='contentText'>Master now contains the full version of the app.</p>
 			</br>
